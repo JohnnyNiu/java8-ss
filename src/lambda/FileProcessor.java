@@ -1,7 +1,6 @@
 package lambda;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -12,10 +11,8 @@ public class FileProcessor {
 
     public static void main(String[] args) {
         try {
-
-
             System.out.println(processFile());
-            System.out.println(processFile((BufferedReader br)->br.readLine() + br.readLine()+ br.readLine()));
+            System.out.println(processFile((BufferedReader br) -> br.readLine() + br.readLine() + br.readLine()));
         } catch (IOException e) {
             e.printStackTrace();
         }
