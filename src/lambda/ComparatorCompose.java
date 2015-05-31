@@ -12,32 +12,18 @@ public class ComparatorCompose {
     public static void main(String[] args) {
         List<Apple> apples = Apple.getSomeApple(10);
 
-        showApples(apples);
+        Apple.showApples(apples);
         sortApplesByWeightASC(apples);
         System.out.println("after sort by weight");
-        showApples(apples);
+        Apple.showApples(apples);
 
         System.out.println("after sort by weight, and color");
         apples.addAll(Apple.duplicateWithReverseColorSameWeight(apples));
         sortAppleByWeightAndColor(apples);
-        showApples(apples);
+        Apple.showApples(apples);
 
     }
 
-    private static void showApples(List<Apple> apples) {
-
-        //1. prior java 8
-//        for(Apple a: apples) {
-//            System.out.println(a);
-//        }
-
-        //2. lambda
-//        apples.forEach((Apple a) -> {System.out.println(a);});
-
-        //3. method reference
-        apples.forEach(System.out::println);
-
-    }
 
     private static void sortApplesByWeightASC(List<Apple> apples) {
 
@@ -78,7 +64,10 @@ public class ComparatorCompose {
 //        apples.sort(weightComparator.thenComparing(colorComparator));
 //        apples.sort(colorComparator.thenComparing(weightComparator));
 
-        apples.sort(Comparator.comparing(Apple::getWeight).thenComparing(Apple::getColor));
+//        apples.sort(Comparator.comparing(Apple::getWeight).thenComparing(Apple::getColor));
+
+        //reversing
+        apples.sort(Comparator.comparing(Apple::getWeight).thenComparing(Apple::getColor).reversed());
     }
 
 }

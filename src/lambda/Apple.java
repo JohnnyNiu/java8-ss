@@ -25,6 +25,10 @@ public class Apple {
         return color;
     }
 
+    public boolean isGreen() {
+        return GREEEN.endsWith(getColor());
+    }
+
     public void setColor(String color) {
         this.color = color;
     }
@@ -70,5 +74,21 @@ public class Apple {
         } else {
             return new Apple(GREEEN, getWeight());
         }
+    }
+
+
+    public static void showApples(List<Apple> apples) {
+
+        //1. prior java 8
+//        for(Apple a: apples) {
+//            System.out.println(a);
+//        }
+
+        //2. lambda
+//        apples.forEach((Apple a) -> {System.out.println(a);});
+
+        //3. method reference
+        apples.forEach(System.out::println);
+
     }
 }
