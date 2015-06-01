@@ -67,7 +67,7 @@ public class StreamAdhoc {
                         '}';
             }
         }
-//todo ,why there is duplications 
+//todo ,why there is duplications
         List<Pair> pairs = l1.stream()
                 .flatMap(
                         i->l2.stream()
