@@ -10,6 +10,11 @@ public class OptionalPractice {
     public static void main(String[] args) {
         Optional aInt = Collections.emptyList().stream().findAny();
         System.out.println(aInt.isPresent());
+        System.out.println(aInt.equals(10));
         System.out.println(aInt.orElse(10));
+        System.out.println(aInt.equals(10));
+        System.out.println(aInt.equals(null));
+
+
     }
 }
